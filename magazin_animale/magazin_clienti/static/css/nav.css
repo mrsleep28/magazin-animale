@@ -1,0 +1,126 @@
+:root {
+    --maro: #8B5E3C;
+    --maro-inchis: #6B4428;
+    --portocaliu: #E8833A;
+    --crem: #FFF4EA;
+    --text: #3A2A1E;
+}
+
+/* ===== Pagina in general ===== */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: "Trebuchet MS", Arial, sans-serif;
+    color: var(--text);
+    background-color: var(--crem);
+}
+
+main {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+footer {
+    background-color: var(--maro-inchis);
+    color: white;
+    text-align: center;
+    padding: 15px;
+}
+
+/* ===== Header-ul ===== */
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: linear-gradient(to right, var(--maro), var(--maro-inchis));
+    padding: 0 20px;
+}
+
+.logo {
+    color: white;
+    font-size: 26px;
+    font-weight: bold;
+    margin: 0;
+}
+
+/* ===== Meniul principal ===== */
+.meniu {
+    list-style: none;      /* scoate bulinele */
+    margin: 0;
+    padding: 0;
+    display: flex;         /* pune optiunile una langa alta */
+}
+
+.meniu li {
+    position: relative;    /* submeniul se aseaza fata de el */
+}
+
+.meniu a {
+    display: block;
+    padding: 18px 14px;
+    color: white;
+    text-decoration: none; 
+    transition: background-color 0.3s; /* pentru efectul de hover */
+}
+
+.meniu a:hover {
+    background-color: var(--portocaliu);
+}
+
+/* ===== Submeniul (derulant) ===== */
+.submeniu {
+    display: none;         
+    position: absolute;    
+    top: 100%;
+    left: 0;
+    min-width: 220px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    background-color: white;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    z-index: 10;           
+}
+
+.meniu li:hover > .submeniu {
+    display: block;        
+}
+
+.submeniu a {
+    color: var(--maro-inchis);
+    padding: 12px 16px;
+}
+
+.submeniu a:hover {
+    color: white;
+}
+
+/* ===== Responsive: ecrane mici (telefon) ===== */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;   
+        padding: 10px;
+    }
+
+    .meniu {
+        flex-direction: column;   
+        width: 100%;
+        text-align: center;
+    }
+
+    .submeniu {
+        position: static;         
+        box-shadow: none;
+    }
+}
+
+main img {
+    max-width: 100%;      
+    height: 250px;        
+    border-radius: 12px;  
+    object-fit: cover; 
+}

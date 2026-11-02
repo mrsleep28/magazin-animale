@@ -1,0 +1,19 @@
+# mediul virtual Python (se recreeaza cu pip install)
+.venv/
+
+# fisiere generate automat de Python
+__pycache__/
+*.pyc
+
+# baza de date locala
+db.sqlite3
+
+# fisiere statice colectate
+staticfiles/
+
+# fisiere de sistem macOS
+.DS_Store
+
+# fisiere de configurare ale editorului
+.vscode/
+.idea/

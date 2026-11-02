@@ -1,0 +1,43 @@
+{% extends "magazin_clienti/baza.html" %}
+{% load static %}
+
+{% block titlu %}Blăniță - magazin pentru animale{% endblock %}
+
+{% block continut %}
+    <section id="bun-venit">
+        <h1>Bun venit la Blăniță!</h1>
+        <p>Tot ce are nevoie prietenul tău blănos, într-un singur loc.</p>
+        <img src="{% static 'imagini/animale_acasa.jpg' %}" alt="Doua pisici">
+    </section>
+
+    <section id="despre-proiect">
+        <h2>Despre proiect</h2>
+        <p>Blăniță este un magazin online pentru animale de companie. Pe site se vor vinde hrană, jucării, accesorii și produse de îngrijire pentru câini, pisici, păsări, rozătoare și pești. Produsele vor putea fi căutate și filtrate după categorie, animalul pentru care sunt, brand, preț și vârsta animalului.</p>
+        <p>Utilizatorii își vor putea face cont, vor putea pune produse în coș și trimite comenzi, cu livrare acasă sau ridicare din magazin.</p>
+    </section>
+
+    <section id="categorii">
+        <h2>Categorii populare</h2>
+        <ul>
+            <li>Hrană</li>
+            <li>Jucării</li>
+            <li>Accesorii</li>
+            <li>Îngrijire</li>
+        </ul>
+    </section>
+
+    <section id="program">
+        <h2>Programul magazinului</h2>
+        <p>Luni - Sâmbătă: 09:00 - 20:00</p>
+        <p>Duminică: închis</p>
+    </section>
+
+    <section id="de-ce-noi">
+        <h2>De ce să ne alegi</h2>
+        <ul>
+            <li>Produse verificate, de la branduri cunoscute</li>
+            <li>Livrare rapidă</li>
+            <li>Sfaturi de la oameni care iubesc animalele</li>
+        </ul>
+    </section>
+{% endblock %}
