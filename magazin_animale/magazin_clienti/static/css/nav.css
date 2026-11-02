@@ -6,7 +6,6 @@
     --text: #3A2A1E;
 }
 
-/* ===== Pagina in general ===== */
 * {
     box-sizing: border-box;
 }
@@ -31,7 +30,6 @@ footer {
     padding: 15px;
 }
 
-/* ===== Header-ul ===== */
 header {
     display: flex;
     align-items: center;
@@ -47,16 +45,15 @@ header {
     margin: 0;
 }
 
-/* ===== Meniul principal ===== */
 .meniu {
-    list-style: none;      /* scoate bulinele */
+    list-style: none;
     margin: 0;
     padding: 0;
-    display: flex;         /* pune optiunile una langa alta */
+    display: flex;
 }
 
 .meniu li {
-    position: relative;    /* submeniul se aseaza fata de el */
+    position: relative;
 }
 
 .meniu a {
@@ -64,14 +61,13 @@ header {
     padding: 18px 14px;
     color: white;
     text-decoration: none; 
-    transition: background-color 0.3s; /* pentru efectul de hover */
+    transition: background-color 0.3s;
 }
 
 .meniu a:hover {
     background-color: var(--portocaliu);
 }
 
-/* ===== Submeniul (derulant) ===== */
 .submeniu {
     display: none;         
     position: absolute;    
@@ -99,7 +95,6 @@ header {
     color: white;
 }
 
-/* ===== Responsive: ecrane mici (telefon) ===== */
 @media (max-width: 768px) {
     header {
         flex-direction: column;   
