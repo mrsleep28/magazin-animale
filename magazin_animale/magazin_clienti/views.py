@@ -41,19 +41,14 @@ class Accesare:
         """Returnează doar calea paginii, fără domeniu și parametri."""
         return urlparse(self.url).path or "/"
 
-    def calculeaza_data(self, tip=""):
-        """Returnează secțiunea HTML cu data sau ora accesării."""
+    def calculeaza_data(self, tip="", format="%A, %-d %B %Y"):
+        """Returnează secțiunea HTML cu data accesării, în română."""
         if tip == "zi":
-            format_data_accesare = "d F Y"
-            text = "Data actuala este: "
+            format = "%-d %B %Y"
         elif tip == "timp":
-            format_data_accesare = "H:i:s"
-            text = "Ora actuala este: "
-        else:
-            format_data_accesare = "l, d F Y"
-            text = "Data actuala este: "
+            format = "%H:%M:%S"
 
-        data_formatata = format_data(self.data, format_data_accesare)
+        data_formatata = timezone.localtime(self.data).strftime(format)
 
         zile = {
             "Monday": "Luni",
@@ -84,7 +79,7 @@ class Accesare:
                 nume_englezesc, nume_romanesc
             )
 
-        return f"<p>{text}{data_formatata}</p>"
+        return f"<section><h2>Data și ora</h2><p>{data_formatata}</p></section>"
 
     def __str__(self):
         return (
