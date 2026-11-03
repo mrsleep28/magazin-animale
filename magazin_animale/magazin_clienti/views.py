@@ -6,7 +6,7 @@ from django.http import HttpResponse
 from django.shortcuts import render
 from django.utils import html, timezone
 from django.utils.dateformat import format as format_data
-
+from .models import Produs
 # Create your views here.
 
 
@@ -269,7 +269,8 @@ def accesare(request, id):
 
 def produse(request):
     inregistreaza_accesarea(request)
-    return render(request, "magazin_clienti/in_lucru.html")
+    lista = Produs.objects.all()
+    return render(request, "magazin_clienti/produse.html", {"produse": lista})
 
 def contact(request):
     inregistreaza_accesarea(request)

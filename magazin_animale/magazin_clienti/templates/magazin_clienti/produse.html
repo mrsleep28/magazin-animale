@@ -1,0 +1,25 @@
+{% extends "magazin_clienti/baza.html" %}
+{% load static %}
+
+{% block titlu %}Produse - Blăniță{% endblock %}
+
+{% block continut %}
+<h1>Toate produsele</h1>
+
+<div class="lista-produse">
+    {% for produs in produse %}
+    <article class="produs">
+        {% if produs.imagine %}
+            <img src="{{ produs.imagine.url }}" alt="{{ produs.nume }}">
+        {% else %}
+            <img src="{% static 'imagini/indisponibil.jpg' %}" alt="Imagine indisponibilă">
+        {% endif %}
+        <h2>{{ produs.nume }}</h2>
+        <p class="categorie">{{ produs.categorie.nume }}</p>
+        <p>Preț: <b>{{ produs.pret }} lei</b></p>
+        <p>Stoc: {{ produs.stoc }} buc.</p>
+        <p>Vârstă: {{ produs.get_varsta_recomandata_display }}</p>
+    </article>
+    {% endfor %}
+</div>
+{% endblock %}

@@ -191,6 +191,12 @@ class Produs(models.Model):
         default=list,
         help_text="Cuvinte cheie separate prin virgulă, de exemplu: fără cereale, bio",
     )
+    imagine = models.ImageField(
+        upload_to="produse/",
+        null=True,
+        blank=True,
+        help_text="Poza produsului. Dacă lipsește, se afișează o imagine default.",
+    )
 
     class Meta:
         ordering = ["-data_adaugare"]

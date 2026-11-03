@@ -51,7 +51,7 @@ class ProdusAdmin(admin.ModelAdmin):
                 "fields": ["nume", "categorie", "specii", "pret", "stoc", "disponibil", "varsta_recomandata"],
             }),
             ("Detalii suplimentare", {
-                "fields": ["brand", "descriere", "greutate", "taguri"],
+                "fields": ["brand", "descriere", "greutate", "taguri", "imagine"],
                 "classes": ["collapse"],
             }),
         ]
