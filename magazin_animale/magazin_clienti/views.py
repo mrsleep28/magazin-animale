@@ -284,3 +284,12 @@ def sfaturi(request):
 def promotii(request):
     inregistreaza_accesarea(request)
     return render(request, "magazin_clienti/in_lucru.html") 
+
+def pagina_produs(request, id):
+    inregistreaza_accesarea(request)
+    try:
+        produs = Produs.objects.get(id=id)
+    except Produs.DoesNotExist:
+        return render(request, "magazin_clienti/produs_inexistent.html", {"id": id}, status=404)
+    similare = Produs.objects.filter(categorie=produs.categorie).exclude(id=produs.id).order_by("?")[:4]
+    return render(request, "magazin_clienti/pagina_produs.html", {"produs": produs, "similare": similare})

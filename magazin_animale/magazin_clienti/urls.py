@@ -17,4 +17,5 @@ urlpatterns = [
     path("cos_virtual/", views.cos_virtual, name="cos_virtual"),
     path("sfaturi/", views.sfaturi, name="sfaturi"),
     path("promotii/", views.promotii, name="promotii"),
+    path("produs/<int:id>/", views.pagina_produs, name="pagina_produs"),
 ]

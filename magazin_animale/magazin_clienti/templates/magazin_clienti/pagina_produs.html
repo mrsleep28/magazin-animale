@@ -1,0 +1,44 @@
+{% extends "magazin_clienti/baza.html" %}
+{% load static %}
+
+{% block titlu %}{{ produs.nume }} - Blăniță{% endblock %}
+
+{% block continut %}
+<div class="produs_individual">
+    {% if produs.imagine %}
+        <img src="{{ produs.imagine.url }}" alt="{{ produs.nume }}">
+    {% else %}
+        <img src="{% static 'imagini/indisponibil.jpg' %}" alt="Imagine indisponibilă">
+    {% endif %}
+    <h1>{{ produs.nume }}</h1>
+    <p class="categorie">{{ produs.categorie.nume }}</p>
+    <p>{{ produs.descriere|default:"Fără descriere." }}</p>
+    <p>Preț: <b>{{ produs.pret }} lei</b></p>
+    <p>Brand: {{ produs.brand|default:"-" }}</p>
+    <p>Greutate: {% if produs.greutate %}{{ produs.greutate }} kg{% else %}-{% endif %}</p>
+    <p>Stoc: {{ produs.stoc }} buc.</p>
+    <p>Disponibil: {{ produs.disponibil|yesno:"da,nu" }}</p>
+    <p>Vârstă: {{ produs.get_varsta_recomandata_display }}</p>
+    <p>Pentru: {% for specie in produs.specii.all %}{{ specie.nume }}{% if not forloop.last %}, {% endif %}{% endfor %}</p>
+    <p>Taguri: {{ produs.taguri|join:", " }}</p>
+    <p>Adăugat la: {{ produs.data_adaugare|date:"d.m.Y" }}</p>
+</div>
+<section class="similare">
+    <h2>Produse din aceeași categorie</h2>
+    <div class="lista-produse">
+        {% for alt_produs in similare %}
+        <a class="produs" href="{{ alt_produs.get_absolute_url }}">
+            {% if alt_produs.imagine %}
+                <img src="{{ alt_produs.imagine.url }}" alt="{{ alt_produs.nume }}">
+            {% else %}
+                <img src="{% static 'imagini/indisponibil.jpg' %}" alt="Imagine indisponibilă">
+            {% endif %}
+            <h3>{{ alt_produs.nume }}</h3>
+            <p><b>{{ alt_produs.pret }} lei</b></p>
+        </a>
+        {% empty %}
+        <p>Nu există alte produse în această categorie.</p>
+        {% endfor %}
+    </div>
+</section>
+{% endblock %}

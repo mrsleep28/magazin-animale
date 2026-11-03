@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.postgres.fields import ArrayField
+from django.urls import reverse
 
 # Create your models here.
 
@@ -225,3 +226,6 @@ class Produs(models.Model):
 
     def __str__(self):
         return self.nume
+    
+    def get_absolute_url(self):
+        return reverse("pagina_produs", args=[self.id])

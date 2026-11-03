@@ -13,6 +13,11 @@
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
 }
 
+.produs a {
+    text-decoration: none;
+    color: inherit;
+}
+
 .produs img {
     width: 100%;
     height: 180px;
@@ -33,4 +38,30 @@
     background-color: #E8833A;
     color: white;
     font-size: 14px;
+}
+
+.produs_individual {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 25px;
+    border: 2px solid #8B5E3C;
+    border-radius: 12px;
+    background-color: #FFF8F0;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+.produs_individual img {
+    width: 100%;
+    max-height: 350px;
+    object-fit: contain;
+    background-color: white;
+    border-radius: 8px;
+}
+a.produs {
+    text-decoration: none;
+    color: inherit;
+}
+
+a.produs:hover {
+    transform: scale(1.03);
 }

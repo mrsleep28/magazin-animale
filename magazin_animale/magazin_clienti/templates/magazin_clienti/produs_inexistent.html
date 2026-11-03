@@ -1,0 +1,9 @@
+{% extends "magazin_clienti/baza.html" %}
+
+{% block titlu %}Produs inexistent - Blăniță{% endblock %}
+
+{% block continut %}
+<h1>Produsul nu există</h1>
+<p>Nu am găsit niciun produs cu id-ul {{ id }}.</p>
+<p><a href="{% url 'produse' %}">Înapoi la toate produsele</a></p>
+{% endblock %}

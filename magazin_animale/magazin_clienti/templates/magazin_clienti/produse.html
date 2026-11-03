@@ -14,7 +14,7 @@
         {% else %}
             <img src="{% static 'imagini/indisponibil.jpg' %}" alt="Imagine indisponibilă">
         {% endif %}
-        <h2>{{ produs.nume }}</h2>
+        <h2><a href="{{ produs.get_absolute_url }}">{{ produs.nume }}</a></h2>
         <p class="categorie">{{ produs.categorie.nume }}</p>
         <p>Preț: <b>{{ produs.pret }} lei</b></p>
         <p>Stoc: {{ produs.stoc }} buc.</p>
