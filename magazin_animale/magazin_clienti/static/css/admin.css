@@ -1,0 +1,17 @@
+:root, html[data-theme] {
+    --body-bg: #FFF8F0;
+    --header-bg: #8B5E3C;
+    --primary: #E8833A;
+    --breadcrumbs-bg: #5C3A21;
+    --selected-row: #FFE0C2;
+}
+
+#nav-sidebar {
+    background-color: #F5E6D8;
+}
+
+.sigla-admin {
+    height: 40px;
+    vertical-align: middle;
+    border-radius: 50%;
+}
